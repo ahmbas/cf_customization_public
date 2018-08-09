@@ -17,6 +17,8 @@
     notify:
     - Enable Katello Agent
     - Start Katello Agent
+  - name: remove cd repo
+    command: rm -rf /etc/yum.repos.d/cd.repo
   - name: Install Puppet
     yum: pkg=puppet state=latest
     when: registered|success
